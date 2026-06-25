@@ -1,88 +1,426 @@
+# Features and Functionalities
+
+This document describes all the implemented features and functionalities of the TodoFlow Full Stack Todo Application.
 
 ---
 
-## `FEATURES.md`
+# Frontend Features
 
-```md
-# Documented Features and Functionalities
+## 1. Multi-Page React Application
 
-This file lists all the features implemented in the application. Any feature not listed here should not be assumed to exist.
+The frontend is built as a multi-page React application instead of a Single Page Application (SPA).
 
-## Frontend Features
+### Pages
 
-1. Todo List Page
-   - Displays all todos
-   - Shows task status
-   - Shows priority
-   - Shows due date
-   - Shows created time
+- Todo List Page
+- Todo Details Page
 
-2. Add Todo
-   - Users can create a new todo from the list page
-   - Title is required
-   - Description, priority, due date, and completion status are supported
+The Todo Details page receives the Todo ID through the URL query parameter.
 
-3. Search
-   - Users can search todos by title or description
+Example:
 
-4. Filter
-   - Users can filter todos by:
-     - All
-     - Active
-     - Completed
+```
+todo.html?id=<todo-id>
+```
 
-5. Sort
-   - Users can sort todos by:
-     - Newest
-     - Oldest
-     - Due Date
-     - Priority
-     - Title
+---
 
-6. Mark as Completed
-   - Users can mark a todo as completed or undo completion
+## 2. Responsive User Interface
 
-7. Single Todo Details Page
-   - Reads todo id from query parameter
-   - Displays full todo details
-   - Shows created time and updated time
+The application is fully responsive and adapts to different screen sizes.
 
-8. Update Todo
-   - Users can edit the selected todo from the detail page
+Supported Devices
 
-9. Delete Todo
-   - Users can delete a todo from list page or detail page
+- Desktop
+- Laptop
+- Tablet
+- Mobile
 
-10. Responsive UI
-   - The layout adjusts for different screen sizes
+---
 
-## Backend Features
+## 3. Modern Dashboard
 
-1. CRUD APIs for todos
-   - Create
-   - Read all
-   - Read one
-   - Update
-   - Delete
+The home page includes a dashboard displaying:
 
-2. File-Based Storage
-   - Todos are stored in `backend/data/todos.json`
+- Total Todos
+- Pending Todos
+- Completed Todos
+- Overdue Todos
 
-3. Persistent Data
-   - Data remains saved even after server restart
+These values update automatically whenever the todo list changes.
 
-4. Validation
-   - Title is required for creation and update
+---
 
-## Data Fields
+## 4. Modern Navigation Bar
 
-Each todo stores:
+The application contains a dedicated navigation bar.
 
-- id
-- title
-- description
-- completed
-- priority
-- dueDate
-- createdAt
-- updatedAt
+Features:
+
+- Application Branding
+- Navigation Links
+- Theme Toggle Button
+- Sticky Navigation
+- Responsive Layout
+
+---
+
+## 5. Footer
+
+A dedicated footer is included with:
+
+- Application Information
+- Technology Stack Information
+- Responsive Design
+
+---
+
+## 6. Light and Dark Mode
+
+The application supports both Light and Dark themes.
+
+Features
+
+- Theme Toggle Button
+- Automatic UI Updates
+- Persistent Theme using Local Storage
+- Modern Color Palette
+- Smooth Theme Switching
+
+---
+
+## 7. Create Todo
+
+Users can create a new todo with:
+
+- Title
+- Description
+- Priority
+- Due Date
+- Completion Status
+
+Validation
+
+- Title is mandatory
+
+---
+
+## 8. View Todo List
+
+Displays all available todos.
+
+Each task card contains
+
+- Status Badge
+- Priority Badge
+- Due Date
+- Created Date
+- Updated Date
+- Task Description
+- Open Button
+- Delete Button
+- Complete Toggle
+
+---
+
+## 9. Todo Details Page
+
+Users can open an individual task.
+
+Features
+
+- View Full Information
+- Update Todo
+- Delete Todo
+- View Creation Date
+- View Last Updated Date
+- View Priority
+- View Completion Status
+
+---
+
+## 10. Update Todo
+
+Users can modify
+
+- Title
+- Description
+- Priority
+- Due Date
+- Completion Status
+
+---
+
+## 11. Delete Todo
+
+Users can permanently delete a todo.
+
+Deletion is confirmed before removing the record.
+
+---
+
+## 12. Mark Todo as Completed
+
+Users can
+
+- Complete a task
+- Undo completion
+
+The UI updates instantly.
+
+---
+
+## 13. Search Todos
+
+Users can search todos using
+
+- Title
+- Description
+
+Search updates dynamically while typing.
+
+---
+
+## 14. Filter Todos
+
+Users can filter by
+
+- All
+- Active
+- Completed
+
+---
+
+## 15. Sort Todos
+
+Sorting options
+
+- Newest
+- Oldest
+- Title
+- Priority
+- Due Date
+
+---
+
+## 16. Task Statistics
+
+Every task displays
+
+- Status
+- Priority
+- Due Date
+- Creation Time
+- Last Updated Time
+
+---
+
+## 17. Attractive Task Cards
+
+Each Todo is displayed inside a modern card.
+
+Card Features
+
+- Glassmorphism Design
+- Priority Indicator
+- Status Badge
+- Hover Effects
+- Responsive Layout
+- Gradient Accent Border
+- Modern Typography
+
+---
+
+## 18. Smooth User Experience
+
+The interface includes
+
+- Modern Buttons
+- Soft Shadows
+- Rounded Components
+- Glass Effect
+- Smooth Hover Animations
+- Responsive Layout
+
+---
+
+# Backend Features
+
+## 1. REST API
+
+The backend exposes RESTful APIs.
+
+Implemented APIs
+
+### Get All Todos
+
+```
+GET /api/todos
+```
+
+### Get Single Todo
+
+```
+GET /api/todos/:id
+```
+
+### Create Todo
+
+```
+POST /api/todos
+```
+
+### Update Todo
+
+```
+PUT /api/todos/:id
+```
+
+### Delete Todo
+
+```
+DELETE /api/todos/:id
+```
+
+---
+
+## 2. File-Based Storage
+
+Todo data is stored inside
+
+```
+backend/data/todos.json
+```
+
+No external database is required.
+
+---
+
+## 3. Persistent Storage
+
+Todos remain available after restarting the server.
+
+---
+
+## 4. UUID Based IDs
+
+Each todo is assigned a unique UUID.
+
+---
+
+## 5. Validation
+
+Backend validates
+
+- Required Title
+- Priority Values
+- Boolean Completion Status
+
+---
+
+## 6. Modular Backend Structure
+
+Backend follows a modular architecture.
+
+Folders
+
+```
+routes/
+services/
+data/
+```
+
+---
+
+# Todo Data Model
+
+Each Todo contains
+
+| Field | Description |
+|--------|-------------|
+| id | Unique Todo Identifier |
+| title | Todo Title |
+| description | Todo Description |
+| completed | Completion Status |
+| priority | Low, Medium or High |
+| dueDate | Due Date |
+| createdAt | Creation Timestamp |
+| updatedAt | Last Updated Timestamp |
+
+---
+
+# Technologies Used
+
+## Frontend
+
+- React
+- Vite
+- JavaScript
+- CSS3
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+
+---
+
+## Storage
+
+- JSON File Storage
+
+---
+
+# Additional Highlights
+
+- Modern Responsive UI
+- Light/Dark Theme
+- Sticky Navigation Bar
+- Footer Section
+- Premium Card Design
+- Glassmorphism Effects
+- Gradient UI
+- Query Parameter Based Navigation
+- File-Based Data Persistence
+- RESTful API Architecture
+- Modular Code Structure
+- Clean User Experience
+- Mobile Friendly Design
+
+---
+
+# Assignment Requirements Covered
+
+✔ Multi-page React Application
+
+✔ Separate Todo Details Page
+
+✔ Query Parameter Based Navigation
+
+✔ CRUD Operations
+
+✔ Express Backend
+
+✔ File-Based Storage
+
+✔ REST APIs
+
+✔ Responsive UI
+
+✔ Modern User Interface
+
+✔ Light/Dark Theme
+
+✔ Search Functionality
+
+✔ Filter Functionality
+
+✔ Sort Functionality
+
+✔ Task Statistics Dashboard
+
+✔ Complete Documentation
+
+✔ GitHub Repository Ready

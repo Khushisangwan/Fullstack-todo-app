@@ -127,7 +127,7 @@ todo-app
 ## Clone Repository
 
 ```bash
-git clone https://github.com/<your-github-username>/todoflow.git
+git clone https://github.com/Khushisangwan/Fullstack-todo-app
 ```
 
 ```bash
@@ -232,38 +232,6 @@ http://localhost:5173
 
 ---
 
-# Screenshots
-
-## Home Page
-
-Add screenshot here
-
-```
-screenshots/home-light.png
-```
-
----
-
-## Dark Mode
-
-Add screenshot here
-
-```
-screenshots/home-dark.png
-```
-
----
-
-## Todo Details Page
-
-Add screenshot here
-
-```
-screenshots/details.png
-```
-
----
-
 # Future Improvements
 
 - User Authentication
@@ -282,9 +250,9 @@ screenshots/details.png
 
 **Khushi Sangwan**
 
-GitHub: https://github.com/<your-github-username>
+GitHub: https://github.com/Khushisangwan
 
-LinkedIn: https://linkedin.com/in/<your-linkedin>
+LinkedIn: https://www.linkedin.com/in/khushi-sangwan/
 
 ---
 
